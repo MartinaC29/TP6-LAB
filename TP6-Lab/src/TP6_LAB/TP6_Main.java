@@ -1,8 +1,8 @@
 
-package probando7;
+package TP6_LAB;
 
 
-public class Probando7 {
+public class TP6_Main {
 
     public static void main(String[] args) {
         

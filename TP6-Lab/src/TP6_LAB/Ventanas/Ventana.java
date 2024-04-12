@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-package probando7.Ventanas;
+package TP6_LAB.Ventanas;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
