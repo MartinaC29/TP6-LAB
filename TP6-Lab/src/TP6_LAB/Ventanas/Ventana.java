@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 
-public class Ventana extends javax.swing.JFrame {
+public class Ventana extends javax.swing.JInternalFrame {
 
     
     public Ventana() {
