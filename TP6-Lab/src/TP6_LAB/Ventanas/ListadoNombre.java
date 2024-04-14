@@ -4,16 +4,19 @@
  */
 package TP6_LAB.Ventanas;
 
+import TP6_LAB.entidades.Producto;
+import java.util.TreeSet;
+
 /**
  *
  * @author martinacallegaro
  */
 public class ListadoNombre extends javax.swing.JInternalFrame {
-
+    private TreeSet<Producto> productos;
     /**
      * Creates new form ListadoNombre
      */
-    public ListadoNombre() {
+    public ListadoNombre(TreeSet<Producto> productos) {
         initComponents();
     }
 

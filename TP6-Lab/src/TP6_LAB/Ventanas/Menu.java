@@ -30,7 +30,7 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jdEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jmProductos = new javax.swing.JMenuItem();
@@ -43,14 +43,14 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jdEscritorioLayout = new javax.swing.GroupLayout(jdEscritorio);
+        jdEscritorio.setLayout(jdEscritorioLayout);
+        jdEscritorioLayout.setHorizontalGroup(
+            jdEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jdEscritorioLayout.setVerticalGroup(
+            jdEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 277, Short.MAX_VALUE)
         );
 
@@ -77,9 +77,19 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.add(jmRubro);
 
         jmNombre.setText("Por Nombre");
+        jmNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmNombreActionPerformed(evt);
+            }
+        });
         jMenu3.add(jmNombre);
 
         jmPrecio.setText("Por Precio");
+        jmPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmPrecioActionPerformed(evt);
+            }
+        });
         jMenu3.add(jmPrecio);
 
         jMenuBar1.add(jMenu3);
@@ -90,23 +100,47 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jdEscritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jdEscritorio)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmProductosActionPerformed
-        // TODO add your handling code here:
+        jdEscritorio.removeAll();
+        jdEscritorio.repaint();
+        GestionProducto gp = new GestionProducto(productos);
+        gp.setVisible(true);
+        jdEscritorio.add(gp);
     }//GEN-LAST:event_jmProductosActionPerformed
 
     private void jmRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmRubroActionPerformed
-        // TODO add your handling code here:
+        jdEscritorio.removeAll();
+        jdEscritorio.repaint();
+        ListadoRubro lr = new ListadoRubro(productos);
+        lr.setVisible(true);
+        jdEscritorio.add(lr);
     }//GEN-LAST:event_jmRubroActionPerformed
+
+    private void jmNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmNombreActionPerformed
+        jdEscritorio.removeAll();
+        jdEscritorio.repaint();
+        ListadoNombre ln = new ListadoNombre(productos);
+        ln.setVisible(true);
+        jdEscritorio.add(ln);
+    }//GEN-LAST:event_jmNombreActionPerformed
+
+    private void jmPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmPrecioActionPerformed
+        jdEscritorio.removeAll();
+        jdEscritorio.repaint();
+        ListadoPrecio lp = new ListadoPrecio(productos);
+        lp.setVisible(true);
+        jdEscritorio.add(lp);
+    }//GEN-LAST:event_jmPrecioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,11 +178,11 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JDesktopPane jdEscritorio;
     private javax.swing.JMenuItem jmNombre;
     private javax.swing.JMenuItem jmPrecio;
     private javax.swing.JMenuItem jmProductos;
