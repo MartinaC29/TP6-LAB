@@ -32,15 +32,15 @@ public class Ventana extends javax.swing.JInternalFrame {
         jtfStock = new javax.swing.JTextField();
         jtfPrecio = new javax.swing.JTextField();
         jtfDescripcion = new javax.swing.JTextField();
-        jtfCodigo = new javax.swing.JTextField();
         jbGuardar = new javax.swing.JButton();
         jbEliminar = new javax.swing.JButton();
         jlErrorCodigo = new javax.swing.JLabel();
         jlErrorDescripcion = new javax.swing.JLabel();
         jlErrorStock = new javax.swing.JLabel();
         jlErrorPrecio = new javax.swing.JLabel();
+        jtfCodigo = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Gestión de productos");
 
@@ -98,9 +98,9 @@ public class Ventana extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtfPrecio)
                             .addComponent(jtfDescripcion)
-                            .addComponent(jtfCodigo)
                             .addComponent(jtfStock)
-                            .addComponent(jcbRubro, 0, 137, Short.MAX_VALUE))
+                            .addComponent(jcbRubro, 0, 137, Short.MAX_VALUE)
+                            .addComponent(jtfCodigo))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlErrorDescripcion)
@@ -124,8 +124,8 @@ public class Ventana extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jtfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlErrorCodigo))
+                            .addComponent(jlErrorCodigo)
+                            .addComponent(jtfCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
