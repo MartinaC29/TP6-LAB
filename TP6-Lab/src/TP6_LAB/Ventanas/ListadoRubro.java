@@ -101,8 +101,9 @@ public class ListadoRubro extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jcbRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbRubroActionPerformed
-       if(jcbRubro.equals(productos.getRubro())){
+
            for(Producto prd: productos){
+               if(jcbRubro.equals(prd.getRubro())){
                model.addRow(new Object[]{prd.getCodigo(),prd.getDescripcion(),prd.getPrecio(),prd.getRubro(),prd.getStock()});
        }
        }
