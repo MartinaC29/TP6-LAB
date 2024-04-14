@@ -50,6 +50,8 @@ public class GestionProducto extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jbBuscar = new javax.swing.JButton();
 
+        setClosable(true);
+
         jLabel1.setText("Gestión de productos");
 
         jbEliminar.setText("Eliminar");

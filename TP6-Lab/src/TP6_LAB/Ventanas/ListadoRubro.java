@@ -17,23 +17,13 @@ public class ListadoRubro extends javax.swing.JInternalFrame {
     private TreeSet<Producto> productos;
     private DefaultTableModel model;
     
-    public ListadoRubro() {
+    public ListadoRubro(TreeSet<Producto> productos) {
         initComponents();
         this.model = (DefaultTableModel) jTable1.getModel();
-        
+        this.productos = productos;
     }
     
-    private void borrarFilas(){
-     
-         int filas=model.getRowCount()-1;
-         for(int f=filas;f >= 0;f--){
-         
-             model.removeRow(f);
-         }
-     }
-    
-
-    
+ 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -44,6 +34,8 @@ public class ListadoRubro extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         jcbRubro = new javax.swing.JComboBox<>();
 
+        setClosable(true);
+
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         jLabel1.setText("Listado de productos por RUBRO.");
 
@@ -52,10 +44,7 @@ public class ListadoRubro extends javax.swing.JInternalFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Descripcion", "Precio", "Stock"
@@ -101,15 +90,22 @@ public class ListadoRubro extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jcbRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbRubroActionPerformed
-
+        borrarFilas();
+        String rubro = jcbRubro.getSelectedItem().toString();
            for(Producto prd: productos){
-               if(jcbRubro.equals(prd.getRubro())){
+               if(rubro.equals(prd.getRubro())){
                model.addRow(new Object[]{prd.getCodigo(),prd.getDescripcion(),prd.getPrecio(),prd.getRubro(),prd.getStock()});
-       }
-       }
+            }
+        }
            
     }//GEN-LAST:event_jcbRubroActionPerformed
-
+    
+    private void borrarFilas(){
+         int filas=model.getRowCount()-1;
+         for(int f=filas;f >= 0;f--){
+             model.removeRow(f);
+         }
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
