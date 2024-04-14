@@ -20,18 +20,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="jbGuardar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jbEliminar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jbBuscar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
@@ -47,15 +47,18 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jbBuscar" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="jbBuscar" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jbEliminar" min="-2" max="-2" attributes="0"/>
                   <Component id="jbGuardar" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,15 +103,13 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jlStockInvalido" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtfDescripcion" min="-2" pref="146" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jtfCodigo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jlCodigoInvalido" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jcbRubro" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                      <Component id="jtDescripcion" min="-2" pref="146" max="-2" attributes="0"/>
+                      <Component id="jlCodigoInvalido" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcRubro" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                       <Component id="jlPrecioInvalido" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtfPrecio" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                      <Component id="jtfStock" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                      <Component id="jtPrecio" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="jtStock" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
+                      <Component id="jtCodigo" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -120,30 +121,30 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtfCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Component id="jlCodigoInvalido" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtfDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtDescripcion" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtfPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jlPrecioInvalido" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jcbRubro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jcRubro" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtfStock" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtStock" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -175,16 +176,19 @@
             <Property name="text" type="java.lang.String" value="Campo invalido: Ingrese un nro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtfStock">
+        <Component class="javax.swing.JTextField" name="jtStock">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtStockKeyReleased"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtfDescripcion">
+        <Component class="javax.swing.JTextField" name="jtDescripcion">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Stock:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcbRubro">
+        <Component class="javax.swing.JComboBox" name="jcRubro">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -220,14 +224,16 @@
             <Property name="text" type="java.lang.String" value="Campo invalido: Ingrese un nro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtfPrecio">
+        <Component class="javax.swing.JTextField" name="jtPrecio">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfPrecioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtPrecioActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtPrecioKeyReleased"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtfCodigo">
+        <Component class="javax.swing.JTextField" name="jtCodigo">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfCodigoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtCodigoActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtCodigoKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
