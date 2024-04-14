@@ -51,6 +51,11 @@ public class GestionProducto extends javax.swing.JInternalFrame {
         jbBuscar = new javax.swing.JButton();
 
         setClosable(true);
+<<<<<<< Updated upstream
+=======
+        setMaximizable(true);
+        setResizable(true);
+>>>>>>> Stashed changes
 
         jLabel1.setText("Gestión de productos");
 
