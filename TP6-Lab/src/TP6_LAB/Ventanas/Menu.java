@@ -4,12 +4,15 @@
  */
 package TP6_LAB.Ventanas;
 
+import TP6_LAB.entidades.Producto;
+import java.util.TreeSet;
+
 /**
  *
  * @author pablo
  */
 public class Menu extends javax.swing.JFrame {
-
+    private TreeSet<Producto> productos = new TreeSet<>();
     /**
      * Creates new form Menu
      */
@@ -26,21 +29,84 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jmProductos = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jmRubro = new javax.swing.JMenuItem();
+        jmNombre = new javax.swing.JMenuItem();
+        jmPrecio = new javax.swing.JMenuItem();
+
+        jMenu1.setText("jMenu1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 277, Short.MAX_VALUE)
+        );
+
+        jMenu2.setText("Administración");
+
+        jmProductos.setText("Productos");
+        jmProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmProductosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmProductos);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Consultas");
+
+        jmRubro.setText("Por Rubro");
+        jmRubro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmRubroActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jmRubro);
+
+        jmNombre.setText("Por Nombre");
+        jMenu3.add(jmNombre);
+
+        jmPrecio.setText("Por Precio");
+        jMenu3.add(jmPrecio);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jmProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmProductosActionPerformed
+
+    private void jmRubroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmRubroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmRubroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +144,14 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jmNombre;
+    private javax.swing.JMenuItem jmPrecio;
+    private javax.swing.JMenuItem jmProductos;
+    private javax.swing.JMenuItem jmRubro;
     // End of variables declaration//GEN-END:variables
 }
