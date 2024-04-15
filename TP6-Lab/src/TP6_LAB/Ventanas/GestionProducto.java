@@ -8,6 +8,7 @@ import TP6_LAB.entidades.Producto;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,6 +26,7 @@ public class GestionProducto extends javax.swing.JInternalFrame {
         jlCodigoInvalido.setVisible(false);
         jlPrecioInvalido.setVisible(false);
         jlStockInvalido.setVisible(false);
+        jbEliminar.setEnabled(false);
     }  
     
     @SuppressWarnings("unchecked")
@@ -55,6 +57,11 @@ public class GestionProducto extends javax.swing.JInternalFrame {
         jLabel1.setText("Gestión de productos");
 
         jbEliminar.setText("Eliminar");
+        jbEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEliminarActionPerformed(evt);
+            }
+        });
 
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +81,12 @@ public class GestionProducto extends javax.swing.JInternalFrame {
         jtStock.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jtStockKeyReleased(evt);
+            }
+        });
+
+        jtDescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtDescripcionKeyReleased(evt);
             }
         });
 
@@ -174,6 +187,11 @@ public class GestionProducto extends javax.swing.JInternalFrame {
         );
 
         jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -265,15 +283,57 @@ public class GestionProducto extends javax.swing.JInternalFrame {
 
     private void jtCodigoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtCodigoKeyReleased
         jlCodigoInvalido.setVisible(false);
+        jbEliminar.setEnabled(false);
     }//GEN-LAST:event_jtCodigoKeyReleased
 
     private void jtPrecioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtPrecioKeyReleased
         jlPrecioInvalido.setVisible(false);
+        jbEliminar.setEnabled(false);
     }//GEN-LAST:event_jtPrecioKeyReleased
 
     private void jtStockKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtStockKeyReleased
         jlStockInvalido.setVisible(false);
+        jbEliminar.setEnabled(false);
     }//GEN-LAST:event_jtStockKeyReleased
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+        
+        if (validarEntero(jtCodigo.getText())) {
+            int codigo = Integer.parseInt(jtCodigo.getText());
+            boolean encontrado = false;
+            for(Producto p: productos){
+                if (codigo == p.getCodigo()) {
+                    jtDescripcion.setText(p.getDescripcion());
+                    jtPrecio.setText(p.getPrecio() + "");
+                    jtStock.setText(p.getStock() + "");
+                    encontrado = true;
+                    jbEliminar.setEnabled(true);
+                }
+            }
+            if (!encontrado) {
+                limpiarCampos();
+                JOptionPane.showMessageDialog(this,"No se ha encontrado el producto");
+            }
+        }else{
+            jlCodigoInvalido.setVisible(true);
+        }  
+    }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void jtDescripcionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDescripcionKeyReleased
+        jbEliminar.setEnabled(false);
+    }//GEN-LAST:event_jtDescripcionKeyReleased
+
+    private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
+        int codigo = Integer.parseInt(jtCodigo.getText());
+            jbEliminar.setEnabled(true);
+            for(Producto p:productos){
+                if (codigo == p.getCodigo()) {
+                    productos.remove(p);
+                    limpiarCampos();
+                    JOptionPane.showMessageDialog(this, "Se ha eliminado correctamente");
+                }
+            }
+    }//GEN-LAST:event_jbEliminarActionPerformed
     
     private boolean validarEntero(String s){
         Pattern p = Pattern.compile("^\\d+$");
