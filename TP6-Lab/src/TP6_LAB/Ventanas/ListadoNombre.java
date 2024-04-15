@@ -6,6 +6,8 @@ package TP6_LAB.Ventanas;
 
 import TP6_LAB.entidades.Producto;
 import java.util.TreeSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +15,15 @@ import java.util.TreeSet;
  */
 public class ListadoNombre extends javax.swing.JInternalFrame {
     private TreeSet<Producto> productos;
+    private DefaultTableModel model;
     /**
      * Creates new form ListadoNombre
      */
     public ListadoNombre(TreeSet<Producto> productos) {
         initComponents();
+        this.productos = productos;
+        this.model = (DefaultTableModel) jtTabla.getModel();
+        
     }
 
     /**
@@ -44,6 +50,12 @@ public class ListadoNombre extends javax.swing.JInternalFrame {
         jLabel1.setText("Listado por Nombre");
 
         jLabel2.setText("Escriba los primeros caracteres:");
+
+        jtfCaracteres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtfCaracteresKeyReleased(evt);
+            }
+        });
 
         jtTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,6 +103,38 @@ public class ListadoNombre extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtfCaracteresKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfCaracteresKeyReleased
+        // TODO add your handling code here:
+        borrarFilas();
+        String buscar = jtfCaracteres.getText(); 
+        boolean productoEncontrado = false;
+        
+      if (!buscar.isEmpty()) {
+          
+       for(Producto prd: productos){
+         if (prd.getDescripcion().equalsIgnoreCase(buscar)) {
+            model.addRow(new Object[]{prd.getCodigo(),prd.getDescripcion(),prd.getPrecio(),prd.getStock()});
+            productoEncontrado = true;
+            return;
+         }
+      } 
+     if (!productoEncontrado) {
+         JOptionPane.showMessageDialog(rootPane, "No existe el producto");
+      }  
+    }
+      
+      
+      
+      
+
+    }//GEN-LAST:event_jtfCaracteresKeyReleased
+
+   public void borrarFilas(){
+        int filas=model.getRowCount()-1;
+         for(int f=filas;f >= 0;f--){
+             model.removeRow(f);
+         }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
