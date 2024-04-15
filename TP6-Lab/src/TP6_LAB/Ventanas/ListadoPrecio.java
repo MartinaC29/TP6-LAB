@@ -14,7 +14,8 @@ public class ListadoPrecio extends javax.swing.JInternalFrame {
     //Constructor 
     public ListadoPrecio(TreeSet<Producto> productos) {
         initComponents();
-        modelo = new DefaultTableModel();
+        this.modelo = (DefaultTableModel) jtTabla.getModel();
+        this.productos = productos; 
     }
 
   
@@ -113,18 +114,28 @@ public class ListadoPrecio extends javax.swing.JInternalFrame {
 
     public void llenarTabla(){
         
-        Double precioMin = Double.parseDouble(jtfPrecio1.getText());
-        Double precioMax = Double.parseDouble(jtfPrecio2.getText());
+        borrarFilas(); 
+        
+        Double precioMin= 0.0;
+        Double precioMax = 9999999.0; 
+
+        if (!jtfPrecio1.getText().isEmpty() ) {
+       precioMin = Double.parseDouble(jtfPrecio1.getText());
+        }
+
+         if (!jtfPrecio2.getText().isEmpty() ) {
+       precioMax = Double.parseDouble(jtfPrecio2.getText());
+        }
         
             for (Producto prod : productos) {
                 
-                if (precioMin <= prod.getPrecio() && precioMax == null) {  //Si el usuario rellenó el campo de precio mínimo
+                if (precioMin <= prod.getPrecio() && precioMax == 9999999.0) {  //Si el usuario rellenó el campo de precio mínimo
                     
                     modelo.addRow(new Object []{prod.getCodigo(), prod.getDescripcion(), prod.getPrecio(), prod.getStock()});
                     
                 }else{
                     
-                    if (precioMin == null && precioMax >= prod.getPrecio()) {  //Si el usuario rellenó el campo de precio máximo
+                    if (precioMin == 0 && precioMax >= prod.getPrecio()) {  //Si el usuario rellenó el campo de precio máximo
                         
                         modelo.addRow(new Object []{prod.getCodigo(), prod.getDescripcion(), prod.getPrecio(), prod.getStock()});
                         
@@ -141,9 +152,17 @@ public class ListadoPrecio extends javax.swing.JInternalFrame {
         
     }
     
+    private void borrarFilas(){
+         int filas=modelo.getRowCount()-1;
+         for(int f=filas;f >= 0;f--){
+             modelo.removeRow(f);
+         }
+     }
+    
     //métodos key release 
     private void jtfPrecio1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfPrecio1KeyReleased
        
+        
         llenarTabla(); 
     }//GEN-LAST:event_jtfPrecio1KeyReleased
 
