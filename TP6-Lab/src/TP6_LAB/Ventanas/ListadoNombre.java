@@ -98,23 +98,15 @@ public class ListadoNombre extends javax.swing.JInternalFrame {
         borrarFilas();
         String buscar = jtfCaracteres.getText(); 
         
-      if (!buscar.isEmpty()) {
+    if (!buscar.isEmpty()) {
           
        for(Producto prd: productos){
-         if (prd.getDescripcion().toLowerCase().startsWith(buscar) ) {
-             
-            model.addRow(new Object[]{prd.getCodigo(),prd.getDescripcion(),prd.getPrecio(),prd.getStock()});
-           
+         if (prd.getDescripcion().toLowerCase().startsWith(buscar) ) {     
+            model.addRow(new Object[]{prd.getCodigo(),prd.getDescripcion(),prd.getPrecio(),prd.getStock()}); 
          }
-      } 
-     
-        
+       }    
     }
       
-      
-      
-      
-
     }//GEN-LAST:event_jtfCaracteresKeyReleased
 
    public void borrarFilas(){
